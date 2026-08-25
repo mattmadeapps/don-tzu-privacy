@@ -1,105 +1,402 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <title>Privacy Policy – The Art of Don Tzu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0907">
+  <meta name="description" content="Privacy Policy for The Art of Don Tzu, including details about Google AdMob and Firebase.">
+  <title>Privacy Policy | The Art of Don Tzu</title>
   <style>
+    :root {
+      --black: #050504;
+      --card: #1a1812;
+      --card-deep: #12110e;
+      --gold: #d4af37;
+      --gold-bright: #e5c100;
+      --gold-muted: #a98d36;
+      --paper: #f5f0df;
+      --muted: #bdb6a5;
+      --line: rgba(212, 175, 55, 0.32);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #222;
+      margin: 0;
+      min-width: 280px;
+      background-color: var(--black);
+      background-image:
+        linear-gradient(rgba(212, 175, 55, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.025) 1px, transparent 1px);
+      background-size: 32px 32px;
+      color: var(--paper);
+      font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
     }
-    h1, h2 {
-      color: #111;
-    }
+
     a {
-      color: #0066cc;
+      color: var(--gold-bright);
+      text-decoration-color: rgba(229, 193, 0, 0.45);
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover, a:focus-visible {
+      color: #fff1a8;
+      text-decoration-color: currentColor;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .page-shell {
+      width: min(920px, calc(100% - 32px));
+      margin: 32px auto;
+    }
+
+    .policy-card {
+      position: relative;
+      overflow: hidden;
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      background: var(--card);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.68), 0 0 32px rgba(212, 175, 55, 0.12);
+    }
+
+    .policy-card::before, .policy-card::after {
+      position: absolute;
+      width: 54px;
+      height: 54px;
+      border-color: rgba(212, 175, 55, 0.65);
+      content: "";
+      pointer-events: none;
+    }
+
+    .policy-card::before {
+      top: 12px;
+      left: 12px;
+      border-top: 1px solid;
+      border-left: 1px solid;
+    }
+
+    .policy-card::after {
+      right: 12px;
+      bottom: 12px;
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+    }
+
+    header {
+      padding: 52px 64px 36px;
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      display: block;
+      width: 132px;
+      height: 132px;
+      margin: 0 auto 22px;
+    }
+
+    .eyebrow, nav p {
+      color: var(--gold-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow { margin: 0 0 10px; }
+
+    h1, h2, h3 {
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 7vw, 3.6rem);
+    }
+
+    .effective-date {
+      display: inline-block;
+      margin: 20px 0 0;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .intro {
+      max-width: 680px;
+      margin: 20px auto 0;
+      color: #ded8c7;
+    }
+
+    nav {
+      padding: 24px 64px;
+      border-bottom: 1px solid var(--line);
+      background: var(--card-deep);
+    }
+
+    nav p { margin: 0 0 10px; }
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav a { color: #d7cfba; font-size: 0.9rem; }
+    main { padding: 10px 64px 56px; }
+    section { padding-top: 38px; scroll-margin-top: 24px; }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.35rem, 4vw, 1.75rem);
+    }
+
+    h3 { margin: 24px 0 8px; font-size: 1.05rem; }
+    p, ul { margin-top: 0; }
+    ul { padding-left: 1.25em; }
+    li + li { margin-top: 7px; }
+    strong { color: #fff6d5; }
+
+    .notice {
+      margin: 20px 0 0;
+      padding: 16px 18px;
+      border-left: 3px solid var(--gold);
+      background: var(--card-deep);
+      color: #ddd5c2;
+    }
+
+    .data-table {
+      display: grid;
+      grid-template-columns: minmax(140px, 0.7fr) 1.3fr;
+      margin-top: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .data-table dt, .data-table dd {
+      margin: 0;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .data-table dt {
+      color: var(--gold);
+      background: var(--card-deep);
+      font-weight: 700;
+    }
+
+    .data-table dd { color: #d8d1bf; }
+    .data-table dt:last-of-type, .data-table dd:last-of-type { border-bottom: 0; }
+
+    .service-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .service-links a {
+      display: block;
+      min-width: 0;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card-deep);
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 22px 64px 28px;
+      border-top: 1px solid var(--line);
+      background: var(--card-deep);
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .page-shell { width: min(100% - 20px, 920px); margin: 10px auto; }
+      header, nav, main, footer { padding-right: 22px; padding-left: 22px; }
+      header { padding-top: 38px; }
+      .logo { width: 106px; height: 106px; }
+      .data-table { display: block; }
+      .data-table dt, .data-table dd { display: block; }
+      .data-table dt { padding-bottom: 4px; border-bottom: 0; }
+      .data-table dd { padding-top: 4px; }
+      .service-links { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 <body>
+  <div class="page-shell">
+    <article class="policy-card">
+      <header>
+        <img class="logo" src="don-tzu-mark.svg" alt="The Art of Don Tzu app mark" width="132" height="132">
+        <p class="eyebrow">The Art of Don Tzu</p>
+        <h1>Privacy Policy</h1>
+        <p class="effective-date"><strong>Effective date:</strong> 25 August 2026</p>
+        <p class="intro">This policy explains what information is handled when you use The Art of Don Tzu (the “App”), why it is used, and the choices available to you.</p>
+      </header>
 
-<h1>Privacy Policy – The Art of Don Tzu</h1>
-<p><strong>Effective Date:</strong> 15 April 2026</p>
+      <nav aria-label="Policy contents">
+        <p>On this page</p>
+        <ul>
+          <li><a href="#summary">Summary</a></li>
+          <li><a href="#information">Information</a></li>
+          <li><a href="#services">Google services</a></li>
+          <li><a href="#advertising">Advertising</a></li>
+          <li><a href="#choices">Your choices</a></li>
+          <li><a href="#retention">Retention</a></li>
+          <li><a href="#rights">Your rights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-<p>The Art of Don Tzu ("the App") respects your privacy. This Privacy Policy explains how information is handled when you use the App.</p>
+      <main>
+        <section id="summary">
+          <h2>1. Who We Are and Key Points</h2>
+          <p>The App is provided by <strong>Matt Made Apps</strong> (“we”, “us”, or “our”). We do not ask for your name, email address, phone number, or a user-created account.</p>
+          <p>The App does, however, use <strong>Google Firebase</strong> to deliver content and sync quote feedback under an automatically generated anonymous identifier, and <strong>Google AdMob</strong> to display advertising. These Google services may process device and usage information as described below.</p>
+          <p class="notice"><strong>We do not sell your personal information.</strong> The App does not use Firebase Analytics or Firebase Crashlytics.</p>
+        </section>
 
-<h2>1. Information We Collect</h2>
-<p>The App does not collect, store, or process any personal data directly.</p>
+        <section id="information">
+          <h2>2. Information We Handle</h2>
+          <dl class="data-table">
+            <dt>Anonymous account</dt>
+            <dd>Firebase Authentication creates a random user identifier (UID). You do not provide a name, email address, password, or profile.</dd>
+            <dt>Quote feedback</dt>
+            <dd>If you like or dislike a quote, the App may store the quote identifier, your anonymous UID, the feedback value, and an update timestamp in Cloud Firestore.</dd>
+            <dt>Quote content</dt>
+            <dd>The App downloads the current quote catalogue from Cloud Firestore. This content is not personal information about you.</dd>
+            <dt>Advertising data</dt>
+            <dd>Google AdMob may process IP address, device information, advertising identifiers, app interactions, ad interactions, diagnostics, and approximate location inferred from signals such as IP address.</dd>
+            <dt>On-device data</dt>
+            <dd>The App stores first-run status, liked or disliked quote identifiers, the personalised-ads preference, and a quote-cache refresh time in local app storage.</dd>
+            <dt>Shared content</dt>
+            <dd>When you choose to share a quote, the App creates a temporary quote image and opens your device’s share sheet. You choose the recipient or third-party app.</dd>
+          </dl>
+          <h3>Information we do not request</h3>
+          <p>We do not request your precise GPS location, contacts, photos, microphone, health data, payment details, or government identifiers.</p>
+        </section>
 
-<h2>2. Third-Party Services</h2>
-<p>The App uses third-party services that may collect information used to identify you.</p>
+        <section id="services">
+          <h2>3. Google Firebase Services</h2>
+          <p>We use the following Google Firebase services:</p>
+          <ul>
+            <li><strong>Firebase Authentication</strong> creates and maintains the anonymous UID used to protect access to your own feedback records.</li>
+            <li><strong>Cloud Firestore</strong> supplies the quote catalogue and stores optional like/dislike feedback associated with that anonymous UID.</li>
+          </ul>
+          <p>Google may process technical information needed to provide, secure, and diagnose these services, such as IP address, device or application identifiers, and request metadata. Google acts as our service provider for these functions.</p>
+          <p>Our purposes are to provide current quote content, remember feedback across supported sessions, protect feedback records, prevent abuse, and maintain the App. Where UK or EEA data protection law applies, we rely on our legitimate interests in operating and securing the App, except where consent is required by law.</p>
+        </section>
 
-<p>These include:</p>
-<ul>
-  <li>Google AdMob</li>
-</ul>
+        <section id="advertising">
+          <h2>4. Google AdMob and Consent</h2>
+          <p>The App displays ads supplied by Google AdMob. Depending on your region, device settings, consent choices, and the App’s personalised-ads setting, Google may serve:</p>
+          <ul>
+            <li><strong>Personalised ads</strong>, which may use information about your interests or prior activity to select ads; or</li>
+            <li><strong>Non-personalised ads</strong>, which are selected using contextual information rather than your past behaviour.</li>
+          </ul>
+          <p>Non-personalised ads may still use information for ad delivery, frequency capping, aggregated reporting, security, and fraud prevention. Turning off personalised ads does not remove ads.</p>
+          <p>Where required, Google’s User Messaging Platform asks for your consent before ads are requested. For personalised advertising and device storage/access that requires consent, our legal basis is your consent. You can also turn off <strong>Personalised ads</strong> from the App’s Settings screen at any time.</p>
+        </section>
 
-<p>Google AdMob may collect data such as:</p>
-<ul>
-  <li>Device information</li>
-  <li>IP address</li>
-  <li>Advertising identifiers</li>
-  <li>Usage data</li>
-</ul>
+        <section id="choices">
+          <h2>5. Your Choices and Device Controls</h2>
+          <ul>
+            <li>Use the Settings cog in the App to request non-personalised ads.</li>
+            <li>Use any consent or privacy-options form shown by Google where available in your region.</li>
+            <li>Use iOS or Android privacy and advertising controls to limit tracking or reset advertising identifiers.</li>
+            <li>Do not tap the like or dislike controls if you do not want quote feedback synced to Firestore.</li>
+            <li>Choose whether and where to share a quote; sharing never occurs automatically.</li>
+            <li>Clear the App’s local data or uninstall it to remove information held on your device.</li>
+          </ul>
+          <p>Your choice to decline personalised advertising does not affect access to the App’s quote features.</p>
+        </section>
 
-<p>This data is used to provide and improve advertising.</p>
+        <section id="sharing">
+          <h2>6. How Information Is Shared</h2>
+          <p>We share information only as needed with Google service providers described in this policy, when you direct the App to share a quote, when required by law, or when necessary to protect rights, safety, and the integrity of the App.</p>
+          <p>If you share content through another app, that provider handles the content under its own privacy policy. We do not control the recipient or service you select.</p>
+        </section>
 
-<p>For more information, please see Google's Privacy Policy:<br>
-<a href="https://policies.google.com/privacy" target="_blank">
-https://policies.google.com/privacy
-</a></p>
+        <section id="retention">
+          <h2>7. Retention and Deletion</h2>
+          <ul>
+            <li><strong>Local settings and feedback</strong> remain on your device until changed, app data is cleared, or the App is uninstalled.</li>
+            <li><strong>Temporary share images</strong> are written to temporary device storage and may later be removed by the operating system.</li>
+            <li><strong>Cloud feedback and the anonymous UID</strong> are retained while reasonably needed to provide the feedback feature, maintain security, resolve disputes, or meet legal obligations.</li>
+            <li><strong>Google advertising and service data</strong> is retained according to Google’s applicable policies and controls.</li>
+          </ul>
+          <p>You may request deletion of cloud feedback by contacting us. Because the App uses an anonymous account, we may need information available from the App or device to locate and verify the relevant records, and in some cases may be unable to connect a request to an anonymous record.</p>
+        </section>
 
-<h2>3. Advertising</h2>
-<p>The App displays advertisements provided by Google AdMob.</p>
+        <section id="transfers">
+          <h2>8. International Data Transfers</h2>
+          <p>Google may process information on servers outside the UK or EEA. Where required, transfers are protected by recognised safeguards such as adequacy decisions or approved standard contractual clauses. See Google’s privacy documentation for details.</p>
+        </section>
 
-<p>These ads may be:</p>
-<ul>
-  <li>Personalised (based on your interests)</li>
-  <li>Non-personalised</li>
-</ul>
+        <section id="children">
+          <h2>9. Children’s Privacy</h2>
+          <p>The App is not directed to children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided information through the App, contact us so we can investigate and take appropriate action.</p>
+        </section>
 
-<p>Users in the UK and EEA may be asked to provide consent for personalised advertising in accordance with applicable laws.</p>
+        <section id="rights">
+          <h2>10. Your Data Protection Rights</h2>
+          <p>Depending on where you live, you may have rights to access, correct, delete, restrict, or object to processing of your personal information; receive a portable copy; withdraw consent; and complain to a data protection authority.</p>
+          <p>Withdrawing consent does not affect processing that occurred before withdrawal. Some rights may be limited where we cannot identify an anonymous record or where an exemption applies. UK users may complain to the <a href="https://ico.org.uk/make-a-complaint/" rel="external">Information Commissioner’s Office</a>.</p>
+        </section>
 
-<h2>4. Legal Basis for Processing (UK GDPR)</h2>
-<p>Where applicable, data processing by third-party services is based on:</p>
-<ul>
-  <li>User consent</li>
-  <li>Legitimate interests (such as funding the App through advertising)</li>
-</ul>
+        <section id="security">
+          <h2>11. Security</h2>
+          <p>We use reasonable technical and organisational safeguards. Firestore access rules restrict feedback records to the associated authenticated anonymous user, and public quote content is read-only from the App. No internet service is completely secure, so we cannot guarantee absolute security.</p>
+        </section>
 
-<h2>5. Children’s Privacy</h2>
-<p>The App is not intended for children under the age of 13.</p>
-<p>The App does not knowingly collect personal data from children.</p>
+        <section id="links">
+          <h2>12. Service Provider Policies</h2>
+          <p>Google’s documentation provides more detail about its data practices and controls:</p>
+          <div class="service-links">
+            <a href="https://policies.google.com/privacy" rel="external">Google Privacy Policy</a>
+            <a href="https://policies.google.com/technologies/ads" rel="external">How Google uses information for ads</a>
+            <a href="https://firebase.google.com/support/privacy" rel="external">Firebase Privacy and Security</a>
+            <a href="https://support.google.com/admob/answer/6128543" rel="external">How AdMob uses app data</a>
+          </div>
+        </section>
 
-<h2>6. Your Data Protection Rights</h2>
-<p>Under UK data protection law, you have the right to:</p>
-<ul>
-  <li>Request access to your data</li>
-  <li>Request correction or deletion</li>
-  <li>Object to processing</li>
-  <li>Withdraw consent where applicable</li>
-</ul>
+        <section id="changes">
+          <h2>13. Changes to This Policy</h2>
+          <p>We may update this policy when the App, our providers, or legal requirements change. The latest version will be posted on this page with a revised effective date. Material changes may also be highlighted in the App where appropriate.</p>
+        </section>
 
-<p>Requests relating to data collected by third-party services should be directed to those providers.</p>
+        <section id="contact">
+          <h2>14. Contact</h2>
+          <p>For privacy questions or requests, contact the App provider:</p>
+          <p><strong>Matt Made Apps</strong><br><a href="mailto:mattmadeapps@gmail.com">mattmadeapps@gmail.com</a></p>
+        </section>
+      </main>
 
-<h2>7. Data Retention</h2>
-<p>The App does not retain any personal data directly. Third-party services may retain data in accordance with their own policies.</p>
-
-<h2>8. Security</h2>
-<p>While the App itself does not collect data, reasonable measures are taken to ensure it operates securely.</p>
-
-<h2>9. Changes to This Privacy Policy</h2>
-<p>This Privacy Policy may be updated from time to time. Any changes will be posted on this page with an updated effective date.</p>
-
-<h2>10. Contact</h2>
-<p>If you have any questions or concerns about this Privacy Policy, please contact:</p>
-
-<p><strong>Email:</strong> mattmadeapps@gmail.com</p>
-
+      <footer>The Art of Don Tzu · Privacy Policy · Last updated 25 August 2026</footer>
+    </article>
+  </div>
 </body>
 </html>
