@@ -54,46 +54,120 @@
     }
 
     .page-shell {
-      width: min(920px, calc(100% - 32px));
-      margin: 32px auto;
+      width: min(720px, calc(100% - 32px));
+      margin: 36px auto;
     }
 
     .policy-card {
       position: relative;
       overflow: hidden;
       border: 2px solid var(--gold);
-      border-radius: 8px;
-      background: var(--card);
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.68), 0 0 32px rgba(212, 175, 55, 0.12);
+      border-radius: 20px;
+      background-color: var(--card);
+      background-image: linear-gradient(135deg, rgba(212, 175, 55, 0.032), transparent 38%, rgba(212, 175, 55, 0.02));
+      box-shadow: 0 0 20px 2px rgba(212, 175, 55, 0.3), 0 10px 24px rgba(0, 0, 0, 0.72);
     }
 
-    .policy-card::before, .policy-card::after {
+    .corner {
       position: absolute;
-      width: 54px;
-      height: 54px;
-      border-color: rgba(212, 175, 55, 0.65);
-      content: "";
+      z-index: 2;
+      width: 22px;
+      height: 22px;
+      border-top: 1.5px solid rgba(212, 175, 55, 0.4);
+      border-left: 1.5px solid rgba(212, 175, 55, 0.4);
       pointer-events: none;
     }
 
-    .policy-card::before {
-      top: 12px;
-      left: 12px;
-      border-top: 1px solid;
-      border-left: 1px solid;
+    .corner::before {
+      position: absolute;
+      inset: 2px;
+      border-top: 0.5px solid rgba(212, 175, 55, 0.2);
+      border-left: 0.5px solid rgba(212, 175, 55, 0.2);
+      content: "";
     }
 
-    .policy-card::after {
+    .corner::after {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 4px;
+      height: 4px;
+      border: 0.8px solid rgba(212, 175, 55, 0.5);
+      background: radial-gradient(circle at -2px -2px, rgba(212, 175, 55, 0.65) 0 1px, transparent 1.5px);
+      content: "";
+      transform: rotate(45deg);
+    }
+
+    .corner--top-left {
+      top: 12px;
+      left: 12px;
+    }
+
+    .corner--top-right {
+      top: 12px;
       right: 12px;
+      transform: rotate(90deg);
+    }
+
+    .corner--bottom-right {
       bottom: 12px;
-      border-right: 1px solid;
-      border-bottom: 1px solid;
+      right: 12px;
+      transform: rotate(180deg);
+    }
+
+    .corner--bottom-left {
+      bottom: 12px;
+      left: 12px;
+      transform: rotate(270deg);
     }
 
     header {
-      padding: 52px 64px 36px;
+      padding: 48px 64px 42px;
       text-align: center;
       border-bottom: 1px solid var(--line);
+    }
+
+    .card-ornament {
+      width: 96px;
+      margin: 0 auto 24px;
+      color: rgba(212, 175, 55, 0.72);
+      text-align: center;
+    }
+
+    .card-ornament__line {
+      position: relative;
+      height: 2px;
+      background: rgba(212, 175, 55, 0.4);
+    }
+
+    .card-ornament__line::before, .card-ornament__line::after {
+      position: absolute;
+      width: 9px;
+      height: 6px;
+      border-top: 1px solid rgba(212, 175, 55, 0.6);
+      content: "";
+    }
+
+    .card-ornament__line::before { left: 0; top: -2px; }
+    .card-ornament__line::after { right: 0; top: -2px; }
+
+    .card-ornament__symbols {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      height: 30px;
+      font-size: 0.8rem;
+    }
+
+    .card-ornament__coin {
+      width: 17px;
+      height: 17px;
+      border: 1px solid rgba(212, 175, 55, 0.7);
+      border-radius: 50%;
+      font-family: Georgia, serif;
+      font-size: 11px;
+      line-height: 15px;
     }
 
     .logo {
@@ -160,6 +234,36 @@
     main { padding: 10px 64px 56px; }
     section { padding-top: 38px; scroll-margin-top: 24px; }
 
+    section + section {
+      position: relative;
+      margin-top: 42px;
+      padding-top: 54px;
+    }
+
+    section + section::before {
+      position: absolute;
+      top: 3px;
+      left: 50%;
+      z-index: 1;
+      width: 7px;
+      height: 7px;
+      border: 1px solid rgba(212, 175, 55, 0.58);
+      background: var(--card);
+      content: "";
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    section + section::after {
+      position: absolute;
+      top: 7px;
+      left: 50%;
+      width: min(180px, 55%);
+      height: 1px;
+      background: rgba(212, 175, 55, 0.28);
+      content: "";
+      transform: translateX(-50%);
+    }
+
     h2 {
       margin: 0 0 16px;
       font-size: clamp(1.35rem, 4vw, 1.75rem);
@@ -224,13 +328,16 @@
       padding: 22px 64px 28px;
       border-top: 1px solid var(--line);
       background: var(--card-deep);
-      color: var(--muted);
-      font-size: 0.86rem;
+      color: rgba(212, 175, 55, 0.62);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
       text-align: center;
+      text-transform: uppercase;
     }
 
     @media (max-width: 640px) {
-      .page-shell { width: min(100% - 20px, 920px); margin: 10px auto; }
+      .page-shell { width: min(100% - 20px, 720px); margin: 10px auto; }
       header, nav, main, footer { padding-right: 22px; padding-left: 22px; }
       header { padding-top: 38px; }
       .logo { width: 106px; height: 106px; }
@@ -249,7 +356,20 @@
 <body>
   <div class="page-shell">
     <article class="policy-card">
+      <span class="corner corner--top-left" aria-hidden="true"></span>
+      <span class="corner corner--top-right" aria-hidden="true"></span>
+      <span class="corner corner--bottom-right" aria-hidden="true"></span>
+      <span class="corner corner--bottom-left" aria-hidden="true"></span>
       <header>
+        <div class="card-ornament" aria-hidden="true">
+          <div class="card-ornament__line"></div>
+          <div class="card-ornament__symbols">
+            <span>✦</span>
+            <span class="card-ornament__coin">$</span>
+            <span>✦</span>
+          </div>
+          <div class="card-ornament__line"></div>
+        </div>
         <object
           class="logo"
           data="don-tzu-mark.svg"
@@ -398,7 +518,7 @@
         <section id="contact">
           <h2>14. Contact</h2>
           <p>For privacy questions or requests, contact the App provider:</p>
-          <p><strong>Matt Made Apps</strong><br><a href="mailto:mattmadeapps@gmail.com">mattmadeapps@gmail.com</a></p>
+          <p><strong>MattMadeApps</strong><br><a href="mailto:mattmadeapps@gmail.com">mattmadeapps@gmail.com</a></p>
         </section>
       </main>
 
