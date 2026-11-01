@@ -380,7 +380,7 @@
         ></object>
         <p class="eyebrow">The Art of Don Tzu</p>
         <h1>Privacy Policy</h1>
-        <p class="effective-date"><strong>Effective date:</strong> 23 October 2026</p>
+        <p class="effective-date"><strong>Effective date:</strong> 1 November 2026</p>
         <p class="intro">This policy explains what information is handled when you use The Art of Don Tzu (the “App”), why it is used, and the choices available to you.</p>
       </header>
 
@@ -404,6 +404,7 @@
           <p>The App is provided by <strong>Matt Made Apps</strong> (“we”, “us”, or “our”). We do not ask for your name, email address, phone number, or a user-created account.</p>
           <p>The App does, however, use <strong>Google Firebase</strong> to deliver content and sync quote feedback under an automatically generated anonymous identifier, and <strong>Google AdMob</strong> to display advertising. These Google services may process device and usage information as described below.</p>
           <p class="notice"><strong>We do not sell your personal information.</strong> The App does not use Firebase Analytics or Firebase Crashlytics.</p>
+          <p>Version 1.1.1 improves quote sharing and adds an opening title animation. These changes do not add new categories of personal information or new service providers. The opening animation and its skip state are handled on your device; the App reads the device’s Reduce Motion setting to skip the animation without uploading that setting.</p>
         </section>
 
         <section id="information">
@@ -420,7 +421,9 @@
             <dt>On-device data</dt>
             <dd>The App stores first-run status, liked or disliked quote identifiers, colour scheme, haptic-feedback and personalised-ads preferences, and a quote-cache refresh time in local app storage. Recent-card history and collection search text remain in memory for the current session and are not uploaded.</dd>
             <dt>Shared content</dt>
-            <dd>When you choose to share a quote, the App creates a temporary quote image and opens your device’s share sheet. You choose the recipient or third-party app.</dd>
+            <dd>When you choose to share a quote from the deck or Liked Quotes, the App creates a temporary PNG image of the quote card and opens your device’s share sheet with attribution text. The export does not include your anonymous Firebase UID or feedback records. You choose the recipient or third-party app.</dd>
+            <dt>Local diagnostic logging</dt>
+            <dd>The App logs share errors and confirmed successful share events locally for diagnostics; a successful share event includes the quote identifier. Cancelled shares are not recorded as successful. These app-generated logs are not sent to Firebase Analytics, Firebase Crashlytics, or an app analytics server. Google SDKs may separately process their own diagnostic information as described in this policy.</dd>
           </dl>
           <h3>Information we do not request</h3>
           <p>We do not request your precise GPS location, contacts, photos, microphone, health data, payment details, or government identifiers.</p>
@@ -457,7 +460,7 @@
             <li>On iOS, change tracking permission in <strong>Settings &gt; Privacy &amp; Security &gt; Tracking</strong>. Declining permission does not limit the App’s quote features.</li>
             <li>Use iOS or Android privacy and advertising controls to limit tracking or reset advertising identifiers.</li>
             <li>Do not tap the like or dislike controls if you do not want quote feedback synced to Firestore.</li>
-            <li>Choose whether and where to share a quote; sharing never occurs automatically.</li>
+            <li>Choose whether and where to share a quote; sharing never occurs automatically. You can dismiss the share sheet without selecting a recipient.</li>
             <li>Clear the App’s local data or uninstall it to remove information held on your device.</li>
           </ul>
           <p>Your choice to decline personalised advertising does not affect access to the App’s quote features.</p>
@@ -467,6 +470,7 @@
           <h2>6. How Information Is Shared</h2>
           <p>We share information only as needed with Google service providers described in this policy, when you direct the App to share a quote, when required by law, or when necessary to protect rights, safety, and the integrity of the App.</p>
           <p>If you share content through another app, that provider handles the content under its own privacy policy. We do not control the recipient or service you select.</p>
+          <p>The App temporarily pauses deck navigation while preparing a share image and displaying the share sheet, so the selected quote is not replaced during export. Progress indicators and retry messages are interface feedback, not additional data collection. Dismissing the share sheet does not remove an image already written to temporary device storage.</p>
         </section>
 
         <section id="retention">
@@ -524,7 +528,7 @@
         </section>
       </main>
 
-      <footer>The Art of Don Tzu · Privacy Policy · Last updated 23 October 2026</footer>
+      <footer>The Art of Don Tzu · Privacy Policy · Last updated 1 November 2026</footer>
     </article>
   </div>
 </body>
